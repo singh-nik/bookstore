@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bookshop
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/styles/content.css">
+    </head>
+    <body>
+        <img src="/static/img/symbol.jpg" alt="avatar" class="img-center">
+  
+         <h1 style="text-align: center;">Bookshop Api</h1>
+         <div class="jc">
+            
+            User will be able to get data from this book review website to use another application.
+            Data will provided in JSON(Java Script Object Notation) formate.
+            To get data 
+             user make a GET request to this website’s (/api/isbn) route, where [isbn] is an ISBN number of the book, it return a JSON response containing the book’s title, author, publication date, ISBN number, review count, and average score.
+                The resulting JSON should follow the format:
+        
+         </div>
+        <div class="jc">
+            {<br>
+                "title": "Memory",,<br>
+                "author": "Doug Lloyd",<br>
+                "year": 2015,<br>
+                "isbn": "1632168146",<br>
+                "review_count": 28,<br>
+                "average_score": 5.0 <br>
+            }
+        </div>
+
+
+         
+         <h1 class="centered"><a href="{{ url_for('home') }}">Home Page</a></h1>
+        
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bookshop
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/styles/content.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  
+        <style>
+            table{
+                 border-collapse: collapse;
+                 width: 100%;
+            }
+            td,th{
+                padding: 10px;
+                text-align: center;
+                font-size: 25px;
+            }
+            th{
+                background-color:black;
+                color: white;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="user">Logged in by: {{ username }}  </div>
+        <div class="user"><a href="{{ url_for('logout') }}">Logout</a></div>
+                
+        <img src="/static/img/symbol.jpg" alt="avatar" class="img-center">
+        <div class="heading">Bookshop</div>  
+        
+        <table border="3px" class="table table-hover">
+            <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Action</th>
+            </tr>
+        </div>
+            {% for b in book %}
+            <tr>   
+                <td>{{ b.isbn }}</td>
+                <td> {{ b.title }} </td>
+                <td>{{ b.author }}</td>
+                <td>{{ b.year }}</td>
+                <td><a href="{{ url_for('book_detail',isbn = b.isbn) }}" >View</a></td>
+            </tr>
+            {% endfor %}
+                   
+        </table>
+
+        <div style="text-align: center;font-weight: bold;">
+            &#169;<br>Nikita Singh
+        </div> 
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bookshop
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/styles/content.css"> 
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                
+                <img src="/static/img/symbol.jpg" alt="avatar" class="img-center">
+                <div class="heading">Bookshop</div>      
+            </div> 
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <form class="log-in" action="{{ url_for('login') }}" method="POST">
+                       <h1 style="font-size: 40px;">Log In</h1>
+                       <span >Username :</span>  <input  type="text" name="username" placeholder="Username"><br><br>
+                       <span >Password   &nbsp;: </span> <input  type="password" name="password" placeholder="Password">
+                       <br><br><button class="btn">Log in</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-6 col-sm-12">
+                    <form class="log-in" action="{{ url_for('register') }}" method="post">
+                        <h1 style="font-size: 40px;">Register</h1>
+                        Username :  <input   type="text" name="username" placeholder="Username"><br><br>
+                        Password  :  <input  type="text" name="password" placeholder="Password"><br><br>
+                        Confirm password : <input  type="text" name="repassword" placeholder="Password">
+                        <br><br><button class="btn">Register</button>
+                    </form>
+                </div>
+                
+                 
+            </div>  
+        <!---
+        <br>
+        <br><br><br><br><br><br><br>-->
+        <div class="fixed-bottom">
+                <div style="text-align: center; font-size: 30px;font-weight:bold;"><a href="{{ url_for('api_page') }}">API</a></div>            
+                <div style="text-align: center;font-weight: bold;">
+                    &#169;<br>Nikita Singh
+                </div>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <title>
+            Bookshop
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/styles/content.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+<style>
+    input[type=radio]
+    {
+        height: 4%;
+        width:4%;
+    }
+</style>
+    </head>
+    <body>
+        
+            <div class="user">Logged in by: {{ username }}  </div>
+            <div class="user"><a href="{{ url_for('logout') }}">Logout</a></div>
+            <img src="/static/img/symbol.jpg" alt="avatar" class="img-center">
+            <div class="heading">Bookshop</div>  
+        
+            <div class="container">
+            <div class="c">
+                <span class="large-text">Find</span>
+
+                <div class="row">
+                <form action="{{ url_for('find') }}" method="GET">
+                    <input class="form-control form-control-lg " type="text" name="name"><br>
+                    <div style="font-size:xx-large;">
+                    Find by:
+                    <input type="radio"  id="isbn" name="choice" value="isbn" > 
+                    <label for="isbn">ISBN</label>
+                    <input type="radio" id="title" name="choice" value="title">
+                    <label for="tittle">Tittle</label>
+                    <input type="radio" id="author" name="choice" value="author">
+                    <label for="author">Author</label><br>
+                    </div>
+                    <button class="btn">Search</button>
+                </form>
+            </div>
+
+            <div style="text-align: center;font-weight: bold;">
+                &#169;<br>Nikita Singh
+            </div> 
+            
+        </div>
+    </body>
+</html>
